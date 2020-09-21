@@ -1,8 +1,12 @@
-import {hashPassword, verifyHash} from './passwords'
+import {hashPassword} from './password-hash'
+import {verifyHash} from './password-verify'
 
 export {
     hashPassword, 
     verifyHash
 }
 
-console.log(hashPassword())
+const hashedPasswordObj = hashPassword('123456')
+const verified =  verifyHash('13456', hashedPasswordObj)
+
+console.log(verified)
