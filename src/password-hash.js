@@ -4,7 +4,7 @@ import crypto from 'crypto'
  * @method hashPassword
  * @description Method, using npm 'crypto', to create a salt and hash for a given password
  * @param {String} password - Password user provides
- * @returns {Object} passObj - Object that containse the hashed password and the salt
+ * @returns {Object} passObj - Object that contains the hashed password and the salt
  */
 
 export const hashPassword = (password) => {
