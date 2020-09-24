@@ -8,7 +8,7 @@
     "release": "babel src -d lib && npm version patch && cpx package.json lib/ && cd lib && npm publish",
     "start": "npm run build && node lib/index",
     "doc": "jsdoc src -d docs",
-    "test": "npm run start && jest"
+    "test": "npm run build && cd lib && jest"
   },
   "keywords": [],
   "author": "lindsay.aiellodev@gmail.com",
@@ -17,10 +17,9 @@
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
+    "cpx": "^1.5.0",
     "jest": "^26.4.2",
     "jsdoc": "^3.6.6"
   },
-  "dependencies": {
-    "cpx": "^1.5.0"
-  }
+  "dependencies": {}
 }
