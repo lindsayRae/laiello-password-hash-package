@@ -12,6 +12,7 @@ export const hashPassword = (password) => {
     try {
         const salt = crypto.randomBytes(16).toString('hex')    
         const hash = crypto.pbkdf2Sync(password, salt, 1000, 64, 'sha512').toString('hex')
+  
         return { hash, salt } 
     } catch (error) {
         return false
@@ -28,12 +29,10 @@ export const hashPassword = (password) => {
 
  export const verifyHash = (newPassword, passObj) => {
 
-    try {
-        const hash = crypto.pbkdf2Sync(newPassword, passObj.salt, 1000, 64, 'sha512').toString('hex')    
-        const passwordsMatch = passObj.hash === hash        
-        return passwordsMatch  
-    } catch (error) {
-        return false
-    }    
+    const hash = crypto.pbkdf2Sync(newPassword, passObj.salt, 1000, 64, 'sha512').toString('hex')    
+    const passwordsMatch = passObj.hash === hash
+    
+    return passwordsMatch
+
 }
 
