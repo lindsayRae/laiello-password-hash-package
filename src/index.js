@@ -1,13 +1,12 @@
-import { hashPassword } from './password-hash'
-import { verifyHash } from './password-hash'
+import { hashPassword, verifyHash } from './password-hash';
 
 export {
-    hashPassword, 
-    verifyHash
-}
+  hashPassword,
+  verifyHash,
+};
 
-const hashedPasswordObj = hashPassword('123')
-const verified =  verifyHash('123', hashedPasswordObj)
+const hashedPasswordObj = hashPassword('123');
+const verified = verifyHash('123', hashedPasswordObj);
 
-console.log('hashedPasswordObj', hashedPasswordObj)
-console.log('verified: ', verified)
+console.log('hashedPasswordObj', hashedPasswordObj);
+console.log('verified: ', verified);

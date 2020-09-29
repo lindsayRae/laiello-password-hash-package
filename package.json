@@ -8,7 +8,9 @@
     "release": "babel src -d lib && npm version patch && cpx package.json lib/ && cpx README.md lib/ && cd lib && npm publish",
     "start": "npm run build && node lib/index",
     "doc": "jsdoc src -d docs",
-    "test": "npm run build && cd lib && jest"
+    "test": "npm run build && cd lib && jest",
+    "lint": "eslint --config ./.eslintrc.js --ignore-path ./.eslintignore ./src/**/*",
+    "lint:fix": "eslint --config ./.eslintrc.js --ignore-path ./.eslintignore ./src/**/* --fix"
   },
   "keywords": [],
   "author": "lindsay.aiellodev@gmail.com",
@@ -18,6 +20,12 @@
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "cpx": "^1.5.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.0",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
     "jest": "^26.4.2",
     "jsdoc": "^3.6.6"
   },
