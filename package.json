@@ -8,7 +8,7 @@
     "release": "babel src -d lib && npm version patch && cpx package.json lib/ && cpx README.md lib/ && cd lib && npm publish",
     "start": "npm run build && node lib/index",
     "doc": "jsdoc src -d docs",
-    "test": "npm run build && cd lib && jest",
+    "test": "npm run build && jest /lib",
     "lint": "eslint --config ./.eslintrc.js --ignore-path ./.eslintignore ./src/**/*",
     "lint:fix": "eslint --config ./.eslintrc.js --ignore-path ./.eslintignore ./src/**/* --fix"
   },
