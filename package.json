@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src -d lib",
-    "release": "babel src -d lib && npm version patch && cpx package.json lib/ && cd lib && npm publish",
+    "release": "babel src -d lib && npm version patch && cpx package.json lib/ && cpx README.md lib/ && cd lib && npm publish",
     "start": "npm run build && node lib/index",
     "doc": "jsdoc src -d docs",
     "test": "npm run build && cd lib && jest"
