@@ -1,6 +1,6 @@
 {
   "name": "laiello-password-hash-package",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A suite of functions to hash and validate passwords.",
   "main": "index.js",
   "scripts": {
