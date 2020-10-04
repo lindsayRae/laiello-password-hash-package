@@ -1,7 +1,8 @@
 import { hashPassword, verifyHash } from './password-hash';
 
-describe('hashPassword basic functionality', () => {
-  const controlPass = hashPassword('testPassword');
+const controlPass = hashPassword('testPassword');
+
+describe('hashPassword basic functionality', () => {  
   test('verifyHash is true when I pass "testPassword" as the password', () => {
     expect(verifyHash('testPassword', controlPass)).toBe(true);
   });
